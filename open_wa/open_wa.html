@@ -9,22 +9,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <script>
-    function openWhatsapp(params) {
-        var waNumber = document.querySelector("#watext");
-        var url = "https://api.whatsapp.com/send?phone=57" + waNumber.value;
+    function openWhatsapp() {
+        var waNumber = document.querySelector("#waNumb");
+        var prefix = 57;
+        var url = "https://api.whatsapp.com/send?phone=" + prefix + waNumber.value;
         window.open(url, '_blank');
     }
 </script>
 
 <body>
-    Whatsapp Number
-    <form id="form1">
-        <div class="form-group">
-            <label for="watext">+57</label>
-            <input type="text" class="form-control" name="watext" id="watext" aria-describedby="helpId" placeholder="">
-            <button onclick="openWhatsapp()" type="button">Open Whatsapp</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-10" style="margin-top: 100px;">
+                <form>
+                    <div class="form-group">
+                        <label for="waNumb">Enter Whatsapp Number</label>
+                        <input type="number" class="form-control" id="waNumb" aria-describedby="whatsappNumber" placeholder="+57">
+                    </div>
+                    <button type="button" onclick="openWhatsapp()" class="btn btn-success">Open Whatsapp</button>
+                </form>
+            </div>
+            <div class="col-1">
+            </div>
         </div>
-    </form>
+    </div>
 </body>
 
 </html>
