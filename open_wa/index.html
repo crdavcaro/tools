@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Whatsapp</title>
+</head>
+<script>
+    function openWhatsapp(params) {
+        var waNumber = document.querySelector("#watext");
+        var url = "https://api.whatsapp.com/send?phone=57" + waNumber.value;
+        window.open(url, '_blank');
+    }
+</script>
+
+<body>
+    Whatsapp Number
+    <form id="form1">
+        <div class="form-group">
+            <label for="watext">+57</label>
+            <input type="text" class="form-control" name="watext" id="watext" aria-describedby="helpId" placeholder="">
+            <button onclick="openWhatsapp()" type="button">Open Whatsapp</button>
+        </div>
+    </form>
+</body>
+
+</html>
